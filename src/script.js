@@ -127,6 +127,19 @@ gltfLoader.load(
     }
 )
 
+
+/**
+ * Points of Interest
+ */
+
+const points = [
+    {
+        position: new THREE.Vector3(1.55, 0.3, - 0.6),
+        element: document.querySelector('.point-0')
+    }
+];
+
+
 /**
  * Lights
  */
@@ -193,7 +206,20 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 const tick = () =>
 {
     // Update controls
-    controls.update()
+    controls.update();
+
+    // Go through each point
+    points.forEach(point => {
+        const screenPosition = point.position.clone();
+        screenPosition.project(camera);
+
+        const translateX = screenPosition.x * sizes.width * 0.5;
+        const translateY = -screenPosition.y * sizes.height * 0.5;
+
+        point.element.style.transform = `translate(${translateX}px, ${translateY}px)`;
+
+    
+    })
 
     // Render
     renderer.render(scene, camera)

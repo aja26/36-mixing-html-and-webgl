@@ -153,8 +153,6 @@ const points = [
         position: new THREE.Vector3(2.25, -1.7, 0),
         element: document.querySelector('.point-2')
     }
-
-
 ];
 
 
@@ -225,7 +223,6 @@ const tick = () =>
 {
     // Update controls
     controls.update();
-
 
     if(sceneReady){
         // Go through each point

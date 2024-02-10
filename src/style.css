@@ -8,16 +8,14 @@ html, body {
     overflow: hidden;
 }
 
-.webgl
-{
+.webgl{
     position: fixed;
     top: 0;
     left: 0;
     outline: none;
 }
 
-.loading-bar
-{
+.loading-bar{
     position: absolute;
     top: 50%;
     width: 100%;
@@ -28,8 +26,7 @@ html, body {
     transition: transform 0.5s;
 }
 
-.loading-bar.ended
-{
+.loading-bar.ended{
     transform: scaleX(0);
     transform-origin: 100% 0;
     transition: transform 1.5s ease-in-out;
@@ -67,7 +64,6 @@ html, body {
     transform: scale(0, 0);
     transition: transform 0.3s;
 }
-
 
 .point .text{
     position: absolute;
